@@ -1,4 +1,4 @@
-package src.main.java;
+
 
 
 public class Logic1
@@ -84,7 +84,10 @@ public class Logic1
 	old35(10) --> true
 	old35(15) --> false */
 	public boolean old35(int n) {
-	
+	    if(!(n%3 == 0 && n%5 == 0) && (n%3 == 0 || n%5 ==0))
+        return true;
+        else
+        return false;
 	}
 
 
@@ -96,7 +99,10 @@ public class Logic1
 	specialEleven(23) --> true
 	specialEleven(24) --> false */
 	public boolean specialEleven(int n) {
-	  
+        if(n>0 && (n%11 == 0 || (n-1)%11 == 0))
+        return true;
+        else
+        return false;
 	}
 
 
@@ -106,7 +112,10 @@ public class Logic1
 	more20(21) --> true
 	more20(42) --> true */
 	public boolean more20(int n) {
-	  
+        if(!(n%20 == 0) && ((n-1)%20 == 0 || (n-2)%20 == 0))
+        return true;
+        else
+        return false;
 	}
 
 
@@ -118,7 +127,10 @@ public class Logic1
 	less20(59) --> true
 	less20(20) --> false */
 	public boolean less20(int n) {
-	  
+        if(!(n%20 == 0) && ((n+1)%20 == 0 || (n+2)%20 == 0))
+        return true;
+        else
+        return false;
 	}
 
 	/*Given a non-negative number "num", return true if num is within 2 of a multiple of 10. 
@@ -129,7 +141,10 @@ public class Logic1
 	nearTen(17) --> false
 	nearTen(19) --> true */
 	public boolean nearTen(int num) {
-	  
+        if(((num+1)%10==0||(num+2)%10==0)||((num-1)%10==0||(num-2)%10==0))
+        return true;
+        else
+        return false;
 	}
 
 
@@ -142,7 +157,11 @@ public class Logic1
 	sortaSum(9, 4) --> 20
 	sortaSum(10, 11) --> 21*/
 	public int sortaSum(int a, int b) {
-	  
+        if(((a+b)>=10) && ((a+b)<=19))
+        return 20;
+        else
+        return a+b;
+    
 	}
 
 
@@ -155,7 +174,12 @@ public class Logic1
 	in1To10(11, false) --> false
 	in1To10(11, true) --> true */
 	public boolean in1To10(int n, boolean outsideMode) {
-	  
+        if((n>=1 && n<=10) && outsideMode == false)
+        return true;
+        else if((n<=1 || n>=10) && outsideMode == true)
+        return true;
+        else
+        return false;
 	}
 
 
@@ -167,7 +191,10 @@ public class Logic1
 	teenSum(10, 13) --> 19
 	teenSum(13, 2) --> 19 */
 	public int teenSum(int a, int b) {
-	  
+        if((a>=13 && a<=19) || (b>=13 && b<=19))
+        return 19;
+        else
+        return a+b;
 	}
 
 
@@ -180,7 +207,10 @@ public class Logic1
 	love6(4, 5) --> false
 	love6(1, 5) --> true */
 	public boolean love6(int a, int b) {
-	  
+        if(a==6 || b==6 || a+b == 6)
+        return true;
+        else
+        return false;
 	}
 
 
@@ -193,7 +223,10 @@ public class Logic1
 	lastDigit(23, 19, 12) --> false
 	lastDigit(23, 19, 3) --> true */
 	public boolean lastDigit(int a, int b, int c) {
-	  
+        if(a%10 == b%10 || a%10 == c%10 || b%10 == c%10)
+        return true;
+        else
+        return false;
 	}
 
 
@@ -206,7 +239,14 @@ public class Logic1
 	answerCell(false, false, true) --> false
 	answerCell(true, false, false) --> false */
 	public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-	  
+        if(isMorning == true && isMom == true && isAsleep == false)
+        return true;
+        else if(isMorning == false && isMom == true && isAsleep == false)
+        return true;
+        else if(isMorning == false && isMom == false && isAsleep == false)
+        return true;
+        else
+        return false;
 	}
 
 	/*Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, 
@@ -220,7 +260,7 @@ public class Logic1
 	alarmClock(5, false) --> "7:00"
 	alarmClock(0, false) --> "10:00" */
 	public String alarmClock(int day, boolean vacation) {
-	  
+	  return "";
 	}
 
 
@@ -235,7 +275,7 @@ public class Logic1
 	teaParty(3, 8) --> 0
 	teaParty(20, 6) --> 2 */
 	public int teaParty(int tea, int candy) {
-	  
+	  return 0;
 	}
 
 
@@ -250,7 +290,7 @@ public class Logic1
 	redTicket(2, 2, 1) --> 0
 	redTicket(0, 0, 0) --> 5 */
 	public int redTicket(int a, int b, int c) {
-	  
+	  return 0;
 	}
 
 
@@ -264,7 +304,7 @@ public class Logic1
 	greenTicket(2, 2, 2) --> 20
 	greenTicket(1, 1, 2) --> 10 */
 	public int greenTicket(int a, int b, int c) {
-	  
+	  return 0;
 	}
 
 
@@ -280,7 +320,7 @@ public class Logic1
 	squirrelPlay(95, false) --> false
 	squirrelPlay(95, true) --> true	*/
 	public boolean squirrelPlay(int temp, boolean isSummer) {
-  
+        return false;
 	}
 
 
@@ -297,7 +337,7 @@ public class Logic1
 	caughtSpeeding(65, false) --> 1
 	caughtSpeeding(65, true) --> 0	*/
 	public int caughtSpeeding(int speed, boolean isBirthday) {
-	  
+	  return 0;
 	}
 
 
@@ -314,7 +354,7 @@ public class Logic1
 	dateFashion(5, 2) --> 0
 	dateFashion(5, 5) --> 1	*/
 	public int dateFashion(int you, int date) {
-	  
+	  return 0;
 	}
 	
 	
@@ -329,7 +369,7 @@ public class Logic1
 	fizzString2(3) --> "Fizz!"
 	fizzString2(15) --> "FizzBuzz!"*/
 	public String fizzString2(int n) {
-  
+        return "";
 	}
 
 	/*When squirrels get together for a party, they like to have sodas. 
@@ -342,7 +382,7 @@ public class Logic1
 	sodaParty(50, false) --> true
 	sodaParty(70, true) --> true */
 	public boolean sodaParty(int sodas, boolean isWeekend) {
-  
+        return false;
 	}
 
 }
