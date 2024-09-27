@@ -260,7 +260,14 @@ public class Logic1
 	alarmClock(5, false) --> "7:00"
 	alarmClock(0, false) --> "10:00" */
 	public String alarmClock(int day, boolean vacation) {
-	  return "";
+		if((day > 0 && day < 6) && vacation == false)
+		return "7:00";
+		else if((day > 0 && day < 6) && vacation == true)
+		return "10:00";
+		else if((day == 0 || day == 6) && vacation == false)
+		return "10:00";
+		else
+	    return "off";
 	}
 
 
@@ -275,7 +282,12 @@ public class Logic1
 	teaParty(3, 8) --> 0
 	teaParty(20, 6) --> 2 */
 	public int teaParty(int tea, int candy) {
-	  return 0;
+	  	if(tea < 5 || candy < 5)
+		return 0;
+		else if(tea >= candy*2 || candy >= tea*2)
+		return 2;
+		else
+		return 1;
 	}
 
 
@@ -290,7 +302,12 @@ public class Logic1
 	redTicket(2, 2, 1) --> 0
 	redTicket(0, 0, 0) --> 5 */
 	public int redTicket(int a, int b, int c) {
-	  return 0;
+	  	if(a==2 && b==2 && c==2)
+		return 10;
+		else if(a!=2 && a==b && a==c && b==c)
+		return 5;
+		else
+		return 0;
 	}
 
 
@@ -304,7 +321,12 @@ public class Logic1
 	greenTicket(2, 2, 2) --> 20
 	greenTicket(1, 1, 2) --> 10 */
 	public int greenTicket(int a, int b, int c) {
-	  return 0;
+	  	if(a!=b && a!=c && b!=c)
+		return 0;
+		else if((a==b && a!=c) || (a==c && b!=c) || (c==b && a!=c))
+		return 10;
+		else
+		return 20;
 	}
 
 
@@ -320,7 +342,12 @@ public class Logic1
 	squirrelPlay(95, false) --> false
 	squirrelPlay(95, true) --> true	*/
 	public boolean squirrelPlay(int temp, boolean isSummer) {
-        return false;
+        if(temp >= 60 && temp <= 90 && isSummer == false)
+		return true;
+		else if(temp >= 60 && temp <= 100 && isSummer == true)
+		return true;
+		else
+		return false;
 	}
 
 
@@ -337,7 +364,19 @@ public class Logic1
 	caughtSpeeding(65, false) --> 1
 	caughtSpeeding(65, true) --> 0	*/
 	public int caughtSpeeding(int speed, boolean isBirthday) {
-	  return 0;
+		if(speed >= 0 && speed <= 60 && isBirthday == false)
+		return 0;
+		else if(speed >= 0 && speed <= 65 && isBirthday == true)
+		return 0;
+		else if(speed >= 61 && speed <= 80 && isBirthday == false)
+		return 1;
+		else if(speed >= 61 && speed <= 85 && isBirthday == true)
+		return 1;
+		else if(speed >= 81 && isBirthday == false)
+		return 2;
+		else 
+		return 2;
+
 	}
 
 
@@ -354,7 +393,12 @@ public class Logic1
 	dateFashion(5, 2) --> 0
 	dateFashion(5, 5) --> 1	*/
 	public int dateFashion(int you, int date) {
-	  return 0;
+		if((you >= 8 && date > 2) || (date >= 8 && you > 2))
+		return 2;
+		else if(you <= 2 || date <= 2)
+		return 0;
+		else
+		return 1;
 	}
 	
 	
@@ -369,7 +413,14 @@ public class Logic1
 	fizzString2(3) --> "Fizz!"
 	fizzString2(15) --> "FizzBuzz!"*/
 	public String fizzString2(int n) {
-        return "";
+        if(n%3 == 0 && n%5 == 0)
+		return "FizzBuzz" +"!";
+		else if (n%3 == 0 && n%5 !=0)
+		return "Fizz" +"!";
+		else if (n%3 != 0 && n%5 == 0)
+		return "Buzz" +"!";
+		else
+		return n +"!";
 	}
 
 	/*When squirrels get together for a party, they like to have sodas. 
@@ -382,7 +433,12 @@ public class Logic1
 	sodaParty(50, false) --> true
 	sodaParty(70, true) --> true */
 	public boolean sodaParty(int sodas, boolean isWeekend) {
-        return false;
+    	if(sodas >= 40 && sodas <= 60 && isWeekend == false)
+		return true;
+		else if(sodas >= 40 && sodas <= 2147483647 && isWeekend == true)
+		return true;
+		else
+		return false;
 	}
 
 }
